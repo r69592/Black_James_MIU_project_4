@@ -229,7 +229,7 @@ $('#home').on('pageinit', function(){
 
 
 
-    searchButton.addEventListener("click", getSearch);
+     searchButton.addEventListener("click", getSearch);
     searchButton1.addEventListener("click", buttonSearch1);
     searchButton2.addEventListener("click", buttonSearch2);
     searchButton3.addEventListener("click", buttonSearch3);
