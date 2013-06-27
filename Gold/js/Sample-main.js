@@ -1,6 +1,12 @@
 $('#home').on('pageinit', function(){
 	//code needed for home page goes here
 
+    // My get id function.
+    function ge(x) {
+        var elementId = document.getElementById(x);
+        return elementId;
+    }
+
     // My array for dropdown menu.
     var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "bedroom", "yard"],
         difficultyValue,
@@ -25,7 +31,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (term != "") {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -56,7 +62,7 @@ $('#home').on('pageinit', function(){
             // Search by term
             if (myTypeArray[1]) {
                 var makeList = document.createElement("ul");
-                document.getElementById("#results").appendChild(makeList);
+                document.getElementById("results").appendChild(makeList);
                 for (var i = 0, len = localStorage.length; i < len; i++) {
                     
                     var key = localStorage.key(i);
@@ -88,7 +94,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (myTypeArray[2]) {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -117,7 +123,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (myTypeArray[3]) {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -146,7 +152,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (myTypeArray[4]) {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -175,7 +181,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (myTypeArray[5]) {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -204,7 +210,7 @@ $('#home').on('pageinit', function(){
         // Search by term
         if (myTypeArray[6]) {
             var makeList = document.createElement("ul");
-            document.getElementById("#results").appendChild(makeList);
+            document.getElementById("results").appendChild(makeList);
             for (var i = 0, len = localStorage.length; i < len; i++) {
                 
                 var key = localStorage.key(i);
@@ -229,13 +235,13 @@ $('#home').on('pageinit', function(){
 
 
 
-     searchButton.addEventListener("click", getSearch);
-    searchButton1.addEventListener("click", buttonSearch1);
-    searchButton2.addEventListener("click", buttonSearch2);
-    searchButton3.addEventListener("click", buttonSearch3);
-    searchButton4.addEventListener("click", buttonSearch4);
-    searchButton5.addEventListener("click", buttonSearch5);
-    searchButton6.addEventListener("click", buttonSearch6);
+     searchButton.on("click", getSearch);
+    searchButton1.on("click", buttonSearch1);
+    searchButton2.on("click", buttonSearch2);
+    searchButton3.on("click", buttonSearch3);
+    searchButton4.on("click", buttonSearch4);
+    searchButton5.on("click", buttonSearch5);
+    searchButton6.on("click", buttonSearch6);
 
 });	
 
