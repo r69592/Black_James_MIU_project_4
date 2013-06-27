@@ -1,6 +1,5 @@
-$('#home').on('pageinit', function(){
+/*$('#home').on('pageinit', function(){
 	//code needed for home page goes here
-
     // My get id function.
     function ge(x) {
         var elementId = document.getElementById(x);
@@ -21,41 +20,6 @@ $('#home').on('pageinit', function(){
     var searchButton5 = $("#searchButton5");
     var searchButton6 = $("#searchButton6");
 
-    var searchButton = $("#searchButton");
-   
-
-    var getSearch = function () {
-        var choreType = myTypeArray; 
-        var term = $("#searchTerm").val; 
-  
-        // Search by term
-        if (term != "") {
-            var makeList = document.createElement("ul");
-            document.getElementById("results").appendChild(makeList);
-            for (var i = 0, len = localStorage.length; i < len; i++) {
-                
-                var key = localStorage.key(i);
-                var value = localStorage.getItem(key);
-                var obj = JSON.parse(value);
-                for (n in obj) {
-                    if (term === obj[n][1]) {
-                        var listItem = document.createElement("li");
-                        var subList = document.createElement("ul");
-                        listItem.appendChild(subList);
-                        makeList.appendChild(listItem);
-                        for (m in obj) { 
-                            var finalLi = document.createElement("li");
-                            subList.appendChild(finalLi);
-                            finalLi.innerHTML = obj[m][0] + "  " + obj[m][1];
-                        }
-                    }
-                }
-            }
-        }
-    };
-    
-   
-    
 
     var buttonSearch1 = function () {
 
@@ -235,7 +199,7 @@ $('#home').on('pageinit', function(){
 
 
 
-     searchButton.on("click", getSearch);
+     
     searchButton1.on("click", buttonSearch1);
     searchButton2.on("click", buttonSearch2);
     searchButton3.on("click", buttonSearch3);
@@ -244,8 +208,10 @@ $('#home').on('pageinit', function(){
     searchButton6.on("click", buttonSearch6);
 
 
-});	
 
+
+
+}); */
 /* ...........Add Item Page........... */
 		
 $('#addItem').on('pageinit', function(){
@@ -258,8 +224,8 @@ $('#addItem').on('pageinit', function(){
 		    myForm.validate({
 			invalidHandler: function(form, validator) {
                 recordErrors.click();
-                console.log(validator);
-                
+                console.log(validator.submitted);
+
                 var html = "";
                 for (var key in validator.submitted) {
                     var label = $('label [for^="'+ key +'"]');
@@ -280,7 +246,7 @@ $('#addItem').on('pageinit', function(){
 
 	// Get radio answer function.         
 
-    function getSelectedRadio() {
+  function getSelectedRadio() {
         var radios = document.forms[0].difficulty;
         for (var i = 0; i < radios.length; i++) {
             if (radios[i].checked) {
@@ -289,25 +255,30 @@ $('#addItem').on('pageinit', function(){
         }
     }
 
+
+  
+
 	
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
 
-var autofillData = function (){
+/*
+    var autofillData = function (){
      for (var n in json) {
             var id = Math.floor(Math.random() * 1000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
 };
-
+*/
 var getData = function(){
-    if (localStorage.length === 0) {
+    console.log(localStorage);
+    /*if (localStorage.length === 0) {
             alert("There is nothing to display so default data was added.");
             autoFillData();
         } else {
-            var displayResults = $("#results");
+            var displayResults = $("#recorderrorslink");
 
             var makeDiv = document.createElement("div");
             makeDiv.setAttribute("id", "items");
@@ -341,20 +312,20 @@ var getData = function(){
                 }
                 makeItemLinks(localStorage.key(i), linksLi);
             }
-        }
+        }*/
 };
 
-var storeData = function(data){
+var storeData = function(data, key){
     if (!key) {
             var id = Math.floor(Math.random() * 1000001);
         } else {
             id = key;
         }
-        getSelectedRadio();
+        //getSelectedRadio();
         var item = {};
         item.chore = ["Chore :", $("#chore").value];
         item.area = ["Chore Location :", $("#area").value];
-        item.difficulty = ["difficulty :", difficultyValue];
+        //item.difficulty = ["difficulty :", difficultyValue];
         item.importance = ["importance :", $("#importance").value];
         item.choreDate = ["Chore Date :", $("#choreDate").value];
         item.notes = ["Notes :", $("#notes").value];
@@ -362,7 +333,7 @@ var storeData = function(data){
         alert("Chore Saved!");
     
 }; 
-
+/*
 var deleteItem = function (){
     var ask = confirm("Are you sure you want to delete this chore?");
         if (ask) {
@@ -384,3 +355,4 @@ var clearLocal = function(){
             return false;
         }
 };
+*/

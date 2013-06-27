@@ -46,6 +46,7 @@ Term  : 1306
           
         <div data-role="header" data-position="fixed" data-theme="a"> <!-- Header -->
 
+          <h1 class="streamlined-branding">Daily Chores</h1>
          
 
         </div> <!-- Header -->  
@@ -54,21 +55,13 @@ Term  : 1306
              
              <h1 class="ui-ctaImg"><a href="#addItem" ><img class="ui-ctaImg" src="images/ctabg.png" ></a></h1>
 
-        <div> <!-- search -->
-
-                <ul id="choreList" data-theme="a">
-
-                  <li><input type="text" id="searchTerm" placeholder="Place search here" /><a href="#resultPage" ><input type="button" width="25px" height="20px" id="searchButton" value="Search" data-theme="a" /></a></li> 
-
-                </ul>  
-
-        </div> <!-- search --> 
+        <br />
               
             
             
           <div > <!-- List -->
 
-            <ul data-role="listview" data-inset="true" data-theme="a" class="ui-listView-settings" >
+            <ul data-role="listview" data-filter="true" data-inset="true" data-theme="a" class="ui-listView-settings" >
 
               <li data-role="list-divider" data-theme="a">Browse By:</li>
 
@@ -132,9 +125,7 @@ Term  : 1306
 
           <div data-role="content"  id="results"><!-- content -->
 
-            <form action=""  id="choreForm">
-
-            </form>
+            
             
           </div><!-- Content -->
           
@@ -158,9 +149,12 @@ Term  : 1306
     <div data-role="page" id="about" data-add-back-btn="true" data-theme="a"><!--.........page.........-->
           
       <div data-role="header" data-position="fixed"><!--.........header.........-->
-            <h1>
+           
+           <h1 class="streamlined-branding">Daily Chores</h1>
+
+            <h2>
               About
-            </h1>
+            </h2>
             
       </div><!--.........header.........-->
           
@@ -210,7 +204,7 @@ Term  : 1306
     <div data-role="page" id="github" data-add-back-btn="true" class="ui-pageBackground-layout" data-theme="a"><!--.........page.........-->
           
       <div data-role="header" data-position="fixed"><!--.........header.........-->
-
+        <h1 class="streamlined-branding">Daily Chores</h1>
             <h1>
               Info
             </h1>
@@ -257,23 +251,27 @@ Term  : 1306
       </div><!--.........footer.........-->
           
     </div><!--.........page.........-->
+
+
+
         <!-- .......................................................................... -->
 
 
 
 
-      <!-- ...............................Add Item Page................................ -->
+      <!-- ...............................Add Item Page................................ --><!-- CHECKED ALL OPENING AND CLOSING -->
 
       <div data-role="page" id="addItem" data-theme="a" ><!-- Page -->
 
         <div data-role="header" data-position="fixed" data-theme="a"><!-- Header -->
             
-
-              <h1  >Chore List</h1>
+          <h1 class="streamlined-branding">Daily Chores</h1>
+              <h1>Chore List</h1>
               
               
 
               <!-- This is my link section! -->
+
           <div data-role="navbar" data-theme="a"><!-- Nav -->
 
                 <ul>
@@ -283,7 +281,6 @@ Term  : 1306
                   <li><a href="#" id="displayData">Display Data</a></li>
                 
                   <li><a href="#addItem" id="addNewChore" class="ui-btn-active" disabled="disabled">New Item</a></li>
-
                 </ul>
 
           </div><!-- Nav -->
@@ -313,17 +310,19 @@ Term  : 1306
 
                   
                     <!-- My input field -->
-                    
-                    <label for="chore"><span class="errors">*</span> Description:</label>
-                    <input type="text" id="chore" placeholder="Type text here" data-clear-btn="true" data-theme="a" class="required" /><p class="inputHints">Example: Wash clothes</p>
-                   
+
+                <label for="chore"><span class="errors">*</span> Description:</label>
+                <input type="text" class="required" id="chore" placeholder="Type text here" data-clear-btn="true" data-theme="a"  /><p class="inputHints">Example: Wash clothes</p>
+
+
+                
 
                     <!-- This is my drop down field -->
 
             <div data-role="fieldcontain"><!-- Drop Down -->
 
                   <label for="area" id="select" ><span class="errors">*</span> Select A Chore Type:</label>
-                  <select name="myChoreList" id="area" data-native-menu="false" class="required" data-theme="a">
+                  <select name="myChoreList" id="area" data-native-menu="false" data-theme="a">
                     <option data-placeholder="true">-- Please Choose A Chore --</option>
                       <option value="laundry" >Laundry</option>
                       <option value="kitchen" >kitchen</option>
@@ -356,11 +355,11 @@ Term  : 1306
 
                     <label >Difficulty</label>
                       <input type="radio" value="easy" name="difficulty" id="easy"  data-theme="a"/>
-                      <label for="easy">Easy</label>
+                      <label for="easy">Easy</label><!-- CHECKED -->
                       <input type="radio" value="medium" name="difficulty" id="medium" data-theme="a" />
-                      <label for="medium">Medium</label>
+                      <label for="medium">Medium</label><!-- CHECKED -->
                       <input type="radio" value="hard" name="difficulty" id="hard" data-theme="a" />
-                      <label for="hard">hard</label>
+                      <label for="hard">hard</label><!-- CHECKED -->
 
                   </fieldset>
 
@@ -437,7 +436,7 @@ Term  : 1306
 
         </div><!-- Nav -->
 
-      </div><!-- Footer --> 
+      </div><!-- Footer -->
             
         
             
@@ -446,7 +445,7 @@ Term  : 1306
 
 
 
-          <!-- ...................................................................... -->
+          <!-- ...................................................................... --><!-- CHECKED -->
 
 
 
