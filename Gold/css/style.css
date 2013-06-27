@@ -12,13 +12,7 @@ html,img,body,div,span,h1,p,a,em,ul,li,fieldset,form,label,legend,article,header
 a {
 	text-decoration: none;
 }
-/*
-div.ui-content-background-color {
-	background-color: #595c66;
-	
-	color: White;
-}
-*/
+#recorderrorslink {display: none;}
 #errors li {
 	color: red;
 	font-size: 16px;
@@ -114,10 +108,11 @@ input, a {color: red;}
 
 
 /* This is the CSS that controls all of the Add Item page. */
-/*
-span {
+
+.errors {
     color: red;
 }
+/*
 h4 {
     color: black;
 }
@@ -138,13 +133,13 @@ h2 {
 }
 
 */
- 
+ .ui-title {text-align: left; }
 
-.font {font-size: 18px; text-align: center; }
+
 /*
 legend {text-align: center;}
 
 #area {text-align: center;}
-
-.inputHints {font-size: 10px; }
 */
+.inputHints {font-size: 10px; }
+

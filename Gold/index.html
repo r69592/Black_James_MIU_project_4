@@ -20,23 +20,16 @@ Term  : 1306
     <!-- Mobile IE needs ClearType for smoothing fonts -->
     <meta http-equiv="cleartype" content="on">
     
-    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
     <script src="js/libs/modernizr.custom.min.js">
     </script>
     
     <!--Document Title -->
-    <title>
-      Daily Chores
-    </title>
-    
+    <title>Daily Chores</title>
     
     <!-- Link CSS -->
-
     <link rel="stylesheet" href="css/themes/James_Black.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" />
     
-
-
     <!--link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /-->
     <Link rel="stylesheet" type="text/css" href="css/style.css" />
     
@@ -49,415 +42,442 @@ Term  : 1306
 
                       <!-- .. .. .. .. .. Home Page ..  ..  ..  ..  .. -->
     
-<div data-role="page" id="home" data-theme="a" > <!-- Page -->
-      
-    <div data-role="header" data-position="fixed" data-theme="a"> <!-- Header -->
-
-     
-
-    </div> <!-- Header -->  
-
-  <div data-role="content" data-inset="true" class="ui-content-background-color" > <!-- Content -->
-         
-         <h1 class="ui-ctaImg">
+    <div data-role="page" id="home" data-theme="a" > <!-- Page -->
           
-          <a href="#addItem" ><img class="ui-ctaImg" src="images/ctabg.png" ></a>
+        <div data-role="header" data-position="fixed" data-theme="a"> <!-- Header -->
 
-         </h1>
-    <div> <!-- search -->
+         
+
+        </div> <!-- Header -->  
+
+      <div data-role="content" data-inset="true" class="ui-content-background-color" > <!-- Content -->
+             
+             <h1 class="ui-ctaImg"><a href="#addItem" ><img class="ui-ctaImg" src="images/ctabg.png" ></a></h1>
+
+        <div> <!-- search -->
+
                 <ul id="choreList" data-theme="a">
-                  <li> 
-                    <input type="text" id="searchTerm" placeholder="Place search here" />
-                    <a href="#resultPage" >
-                <input type="button" width="25px" height="20px" id="searchButton" value="Search" data-theme="a" />
-              </a>
-                  </li> 
+
+                  <li><input type="text" id="searchTerm" placeholder="Place search here" /><a href="#resultPage" ><input type="button" width="25px" height="20px" id="searchButton" value="Search" data-theme="a" /></a></li> 
+
                 </ul>  
-    </div> <!-- search --> 
-          
-        
-        
-      <div > <!-- List -->
-          <ul data-role="listview" data-inset="true" data-theme="a" class="ui-listView-settings" >
-            <li data-role="list-divider" data-theme="a">Browse By:</li>
-             <li>
-              <a href="#resultPage" value="Bathroom" id="searchButton3" ><img src="images/bathroom.png" class="ui-li-icon">
-                Bathroom
-              </a>
-            </li>
-              <li>
-              <a href="#resultPage" value="Bedroom" id="searchButton5" ><img src="images/bedroom.png" class="ui-li-icon">
-                Bedroom
-              </a>
-            </li>
-             <li>
-              <a href="#resultPage" value="Kitchen" id="searchButton2" ><img src="images/kitchen.png" class="ui-li-icon">
-                Kitchen
-              </a>
-            </li>
-            <li>
-              <a href="#resultPage" value="Laundry" id="searchButton1"><img src="images/laundry.png" class="ui-li-icon ui-corner-none">
-                Laundry
-              </a>
-            </li>
-            <li>
-              <a href="#resultPage" value="Living Room" id="searchButton4" ><img src="images/living room.png" class="ui-li-icon">
-                Living Room
-              </a>
-            </li>
-          
-            <li>
-              <a href="#resultPage" value="Yard" id="searchButton6" ><img src="images/yard.png" class="ui-li-icon ui-corner-none">
-                Yard
-              </a>
-            </li>
-          </ul>
-      </div> <!-- List -->
-        
-  </div><!-- Content -->
-   
-      <div data-role="footer" data-position="fixed"  data-id="home" >
 
-           <div data-role="navbar" data-theme="a"> <!-- Nav -->
-            <ul>
-              <li>
-                <a href="#home" data-icon="home" class="ui-btn-active" >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#github" data-icon="star" >
-                  Info
-                </a>
-              </li>
-              <li>
-                <a href="#about" data-icon="info" >
-                  About
-                </a>
-              </li>
+        </div> <!-- search --> 
+              
+            
+            
+          <div > <!-- List -->
+
+            <ul data-role="listview" data-inset="true" data-theme="a" class="ui-listView-settings" >
+
+              <li data-role="list-divider" data-theme="a">Browse By:</li>
+
+              <li><a href="#resultPage" value="Bathroom" id="searchButton3" ><img src="images/bathroom.png" class="ui-li-icon">Bathroom</a></li>
+
+              <li><a href="#resultPage" value="Bedroom" id="searchButton5" ><img src="images/bedroom.png" class="ui-li-icon">Bedroom</a></li>
+
+              <li><a href="#resultPage" value="Kitchen" id="searchButton2" ><img src="images/kitchen.png" class="ui-li-icon">Kitchen</a></li>
+
+              <li><a href="#resultPage" value="Laundry" id="searchButton1"><img src="images/laundry.png" class="ui-li-icon ui-corner-none">Laundry</a></li>
+
+              <li><a href="#resultPage" value="Living Room" id="searchButton4" ><img src="images/living room.png" class="ui-li-icon">Living Room</a></li>
+              
+              <li><a href="#resultPage" value="Yard" id="searchButton6" ><img src="images/yard.png" class="ui-li-icon ui-corner-none">Yard</a></li>
+
             </ul>
-        </div> <!-- Nav -->
 
-      </div>
-</div> <!-- Page -->
-    <!-- .......................................................................... -->
-
-
-              <!--  ..  ..  ..  ..  .. results page ..  ..  ..  .. ..  -->
-    
-    <div data-role="page" id="resultPage" data-add-back-btn="true" data-theme="a">
-      
-      <div data-role="header" data-position="fixed">
-        <h1>
-          Search Results
-        </h1>
-        
-      </div>
-      <div data-role="content"  id="results">
-        <form action="#" method="post" id="choreForm">
-
-        </form>
-        
-      </div>
-      
-      <div data-role="footer" data-position="fixed" data-id="resultPage">
-        
-      </div>
-      
-    </div>
-    <!-- .......................................................................... -->
-
-              <!--  ..  ..  ..  ..  .. About Page ..  ..  ..  .. ..  -->
-    
-    <div data-role="page" id="about" data-add-back-btn="true" data-theme="a">
-      
-      <div data-role="header" data-position="fixed">
-        <h1>
-          About
-        </h1>
-        
-      </div>
-      
-        <div data-role="content"  class="ui-content-about">
-        <p>
-          Daily chores was created for the individual that has trouble trying to remember what chores they have left. When you use Daily Chores App, you can type in a discription of the the chore you need to keep up with. You can choose a location and set a date it needs to be completed.
-        </p>
-
-        <div data-role="content" data-inset="true" >  
-          <ul data-role="listview" data-inset="true" data-theme="a" >
+          </div> <!-- List -->
             
-            <li data-role="list-divider" data-theme="a">App Links</li>
-
-            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_3/Gold/index.html">Gold</a><p>Gold is the setting that I think will work.</p></li>
-            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_3/Bronze/index.html">Bronze</a><p>Bronze is what I like but don't think will work.</p></li>  
-          </ul>  
-    </div>
-        
-      </div>
-      
-      <div data-role="footer" data-position="fixed" data-id="about">
-        <div data-role="navbar" data-theme="a">
-          <ul>
-            <li>
-              <a href="index.html" data-icon="home" >
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#github" data-icon="star" >
-                Info
-              </a>
-            </li>
-            <li>
-              <a href="#about" data-icon="info" class="ui-btn-active" >
-                About
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-    <!-- .......................................................................... -->
-
-              <!--  ..  ..  ..  ..  .. GitHub Page  ..  ..  ..  ..  ..  -->
-    
-    <div data-role="page" id="github" data-add-back-btn="true" class="ui-pageBackground-layout" data-theme="a">
-      
-      <div data-role="header" data-position="fixed">
-        <h1>
-          Info
-        </h1>
-      </div>
-      <div data-role="content" >
+      </div><!-- Content -->
        
+      <div data-role="footer" data-position="fixed"  data-id="home" ><!-- footer -->
 
-        <div data-role="collapsible-set" data-theme="a" data-content-theme="d">
-    <div data-role="collapsible">
-        <h3>GitHub Links</h3>
-        <a href="https://github.com/r69592">Main GitHub</a>
-            <p>Main link to all of my GitHub repos.</p>
-        <a href="https://github.com/r69592/Black_James_MIU_project_2">Main GitHub</a>
-            <p>Link to my MIU week 2 repos.</p>    
-    </div>
-   
-</div>
+               <div data-role="navbar" data-theme="a"> <!-- Nav -->
 
-       
+                <ul>
+
+                  <li><a href="#home" data-icon="home" class="ui-btn-active" >Home</a></li>
+
+                  <li><a href="#github" data-icon="star" >Info</a></li>
+
+                  <li><a href="#about" data-icon="info" >About</a></li>
+
+                </ul>
+
+            </div> <!-- Nav -->
+
+      </div><!-- footer -->
+    </div> <!-- Page -->
+
+
+
+
+
+        <!-- .......................................................................... -->
+
+
+
+
+
+
+                  <!--  ..  ..  ..  ..  .. results page ..  ..  ..  .. ..  -->
         
-      </div>
-      
-      <div data-role="footer" data-position="fixed" data-id="github">
-        <div data-role="navbar" data-theme="a">
-          <ul>
-            <li>
-              <a href="index.html" data-icon="home" >
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#github" data-icon="star" class="ui-btn-active" >
-                Info
-              </a>
-            </li>
-            <li>
-              <a href="#about" data-icon="info" >
-                About
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-    <!-- .......................................................................... -->
-
-</div>
-
-
-  <!-- ...............................Add Item Page................................ -->
-
-    <div data-role="page" id="addItem" data-theme="a" >
-
-      <div data-role="header" data-position="fixed" data-theme="a">
-          <div id="headerBg">
-          <h1 class="font" >Chore List</h1>
+        <div data-role="page" id="resultPage" data-add-back-btn="true" data-theme="a"><!-- Page -->
           
-          
+          <div data-role="header" data-position="fixed"><!-- Header -->
 
-          <!-- This is my link section! -->
-          <div data-role="navbar" data-theme="a">
-            <ul>
-              <li><a href="#" id="clearStorage">
-              Clear Data
-              </a></li>
+            <h1>Search Results</h1>
             
-              <li><a href="#" id="displayData">
-              Display Data
-              </a></li>
-            
-              <li><a href="#addItem" id="addNewChore">
-              New Item
-              </a></li>
-            </ul>
-          </div>
-          </div>  
-      </div>
+          </div><!-- Header -->
 
-      <!-- .............................. -->
-          
-         
-      <!-- This starts my form with all buttons,radios,selectBox,etc. -->
-      <div data-role="content">    
-          <form action=""  id="choreForm" >
+          <div data-role="content"  id="results"><!-- content -->
+
+            <form action=""  id="choreForm">
+
+            </form>
             
-              <legend>
-                Chore Information
-              </legend>
+          </div><!-- Content -->
+          
+          <div data-role="footer" data-position="fixed" data-id="resultPage"><!-- Footer -->
+            
+          </div><!-- Footer -->
+          
+        </div><!-- Page -->
+
+
+
+
+
+        <!-- .......................................................................... -->
+
+
+
+
+                  <!--  ..  ..  ..  ..  .. About Page ..  ..  ..  .. ..  -->
+        
+    <div data-role="page" id="about" data-add-back-btn="true" data-theme="a"><!--.........page.........-->
+          
+      <div data-role="header" data-position="fixed"><!--.........header.........-->
+            <h1>
+              About
+            </h1>
+            
+      </div><!--.........header.........-->
+          
+        <div data-role="content"  class="ui-content-about"><!--.........content.........-->
+            <p>
+              Daily chores was created for the individual that has trouble trying to remember what chores they have left. When you use Daily Chores App, you can type in a discription of the the chore you need to keep up with. You can choose a location and set a date it needs to be completed.
+            </p>
+
+            <div data-role="fieldcontain" data-inset="true" ><!--.........fieldcontain.........-->
+
+              <ul data-role="listview" data-inset="true" data-theme="a" >
+                
+                <li data-role="list-divider" data-theme="a">App Links</li>
+
+                <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_3/Gold/index.html">Gold</a><p>Gold is the setting that I think will work.</p></li>
+                <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_3/Bronze/index.html">Bronze</a><p>Bronze is what I like but don't think will work.</p></li>  
+              </ul>  
+
+          </div><!--.........fieldcontain.........-->
+            
+        </div><!--.........content.........-->
+          
+      <div data-role="footer" data-position="fixed" data-id="about"><!--.........footer.........-->
+
+            <div data-role="navbar" data-theme="a"><!--.........navbar.........-->
+
+              <ul>
+
+                <li><a href="index.html" data-icon="home" >Home</a></li>
+
+                <li><a href="#github" data-icon="star" >Info</a></li>
+
+                <li><a href="#about" data-icon="info" class="ui-btn-active" >About</a></li>
+
+              </ul>
+
+            </div><!--.........navbar.........-->
+
+      </div><!--.........footer.........-->
+          
+    </div><!--.........page.........-->
+
+        <!-- .......................................................................... -->
+
+                  <!--  ..  ..  ..  ..  .. GitHub Page  ..  ..  ..  ..  ..  -->
+        
+    <div data-role="page" id="github" data-add-back-btn="true" class="ui-pageBackground-layout" data-theme="a"><!--.........page.........-->
+          
+      <div data-role="header" data-position="fixed"><!--.........header.........-->
+
+            <h1>
+              Info
+            </h1>
+
+      </div><!--.........header.........-->
+
+      <div data-role="content" ><!--.........content.........-->
+           
+
+            <div data-role="collapsible-set" data-theme="a" data-content-theme="d"><!--.........collapsible-set.........-->
+
+        <div data-role="collapsible"><!--.........collapsible.........-->
+
+            <h3>GitHub Links</h3>
+            <a href="https://github.com/r69592">Main GitHub</a>
+                <p>Main link to all of my GitHub repos.</p>
+            <a href="https://github.com/r69592/Black_James_MIU_project_2">Main GitHub</a>
+                <p>Link to my MIU week 2 repos.</p>  
+
+        </div><!--.........collapsible.........-->
+       
+        </div><!--.........collapsible-set.........-->
+
+           
+            
+      </div><!--.........content.........-->
+          
+      <div data-role="footer" data-position="fixed" data-id="github"><!--.........footer.........-->
+
+            <div data-role="navbar" data-theme="a"><!--.........navbar.........-->
+
+              <ul>
+
+                <li><a href="index.html" data-icon="home" >Home</a></li>
+
+                <li><a href="#github" data-icon="star" class="ui-btn-active" >Info</a></li>
+
+                <li><a href="#about" data-icon="info" >About</a></li>
+
+              </ul>
+
+            </div><!--.........navbar.........-->
+
+      </div><!--.........footer.........-->
+          
+    </div><!--.........page.........-->
+        <!-- .......................................................................... -->
+
+
+
+
+      <!-- ...............................Add Item Page................................ -->
+
+      <div data-role="page" id="addItem" data-theme="a" ><!-- Page -->
+
+        <div data-role="header" data-position="fixed" data-theme="a"><!-- Header -->
+            
+
+              <h1  >Chore List</h1>
               
               
-                 <h4>
-                  <span>*</span> 
-                  fields are required
-                </h4>
-                <ul id="errors"></ul>
-            
-              <!-- ........ -->
-              <div data-role="fieldcontain" >
-              <ul id="choreList">
+
+              <!-- This is my link section! -->
+          <div data-role="navbar" data-theme="a"><!-- Nav -->
+
+                <ul>
+
+                  <li><a href="#" id="clearStorage">Clear Data</a></li>
+                
+                  <li><a href="#" id="displayData">Display Data</a></li>
+                
+                  <li><a href="#addItem" id="addNewChore" class="ui-btn-active" disabled="disabled">New Item</a></li>
+
+                </ul>
+
+          </div><!-- Nav -->
+              
+        </div><!-- Header -->
+
+          <!-- .............................. -->
+              
+             
+          <!-- This starts my form with all buttons,radios,selectBox,etc. -->
+
+        <div data-role="content"><!-- Content --> 
+
+              <form action=""  id="choreForm" >
+                
+                  <legend>Chore Information</legend>
+                  
+                  
+                     <h4><span class="errors">* fields are required</span></h4>
+
+                    <ul id="errors"></ul>
 
                 
-                <label for="chore"><span>*</span> Description:</label>
-                <input type="text" id="chore" placeholder="Type text here" data-clear-btn="true" data-theme="a" /><p class="inputHints">Example: Wash clothes</p>
-               
-
-                <!-- This is my drop down field -->
-            <div data-role="fieldcontain">
-              <label for="area" id="select" ><span>*</span> Select A Chore Type:</label>
-              <select name="myChoreList" id="area" data-native-menu="false" class="required" data-theme="a">
-                <option data-placeholder="true">-- Please Choose A Chore --</option>
-                  <option value="laundry" >Laundry</option>
-                  <option value="kitchen" >kitchen</option>
-                  <option value="bathroom" >bathroom</option>
-                  <option value="living room" >living room</option>
-                  <option value="bedroom" >bedroom</option>
-                  <option value="yard" >yard</option>
-              </select>
-
-            </div>
-
-                <!--label for="area" id="select1"><span>*</span> Select A Chore Type:</label>
-              </ul>
-              </div-->
-              <!-- ........ -->
-            
-              <legend>
-                Questions
-              </legend>
-
-              <!-- ........ -->
-
-               <!-- This is my radio select field -->
-            <div data-role="fieldcontain" >
-              <fieldset data-role="controlgroup" >
-                <label >Difficulty</label>
-                  <input type="radio" value="easy" name="difficulty" id="easy"  data-theme="a"/>
-                  <label for="easy">Easy</label>
-                  <input type="radio" value="medium" name="difficulty" id="medium" data-theme="a" />
-                  <label for="medium">Medium</label>
-                  <input type="radio" value="hard" name="difficulty" id="hard" data-theme="a" />
-                  <label for="hard">hard</label>
-              </fieldset>
-            </div>
+                  <!-- ........ -->
 
           
-              <!-- ........ -->
-               <!-- This is my range field -->
-            <div data-role="fieldcontain">
-              <label for="Iportant">Importance</label>
-              <input type="range" name="importance" id="importance" value="0" min="0" max="50" data-theme="a" />
-            </div>
 
-            
+                  
+                    <!-- My input field -->
+                    
+                    <label for="chore"><span class="errors">*</span> Description:</label>
+                    <input type="text" id="chore" placeholder="Type text here" data-clear-btn="true" data-theme="a" class="required" /><p class="inputHints">Example: Wash clothes</p>
+                   
 
-              <!-- .... Completion Date .... -->
-            <div data-role="fieldcontain" >
-              <label for="choreDate">Completion Date</label>
-              <input type="date" id="choreDate" data-theme="a" />
-            </div>
-              <!-- ........ -->
+                    <!-- This is my drop down field -->
 
+            <div data-role="fieldcontain"><!-- Drop Down -->
 
-              <!-- This is my text field --> 
-            <div data-role="fieldcontain" >
-              <label for="notes" >Notes</label>
-              <textarea data-theme="a" id="notes" placeholder="Any memo's about your chore goes here."></textarea>
-              <p class="inputHints">Example: There is 2 loads that need to be washed.</p>
-            </div>
+                  <label for="area" id="select" ><span class="errors">*</span> Select A Chore Type:</label>
+                  <select name="myChoreList" id="area" data-native-menu="false" class="required" data-theme="a">
+                    <option data-placeholder="true">-- Please Choose A Chore --</option>
+                      <option value="laundry" >Laundry</option>
+                      <option value="kitchen" >kitchen</option>
+                      <option value="bathroom" >bathroom</option>
+                      <option value="living room" >living room</option>
+                      <option value="bedroom" >bedroom</option>
+                      <option value="yard" >yard</option>
+                  </select>
 
+            </div><!-- Drop Down -->
 
-              <!-- ........ -->
-              <div data-role="fieldcontain" >
+                    
+                
+
+          
+
+                  <!-- ........ -->
+                
+                  <legend>
+                    Questions
+                  </legend>
+
+                  <!-- ........ -->
+
+                   <!-- This is my radio select field -->
+
+            <div data-role="fieldcontain" ><!-- Radio -->
+
+                  <fieldset data-role="controlgroup" >
+
+                    <label >Difficulty</label>
+                      <input type="radio" value="easy" name="difficulty" id="easy"  data-theme="a"/>
+                      <label for="easy">Easy</label>
+                      <input type="radio" value="medium" name="difficulty" id="medium" data-theme="a" />
+                      <label for="medium">Medium</label>
+                      <input type="radio" value="hard" name="difficulty" id="hard" data-theme="a" />
+                      <label for="hard">hard</label>
+
+                  </fieldset>
+
+            </div><!-- Radio -->
+
               
-                <input type="button" id="saveButton" value="Save" data-theme="a" />
+                  <!-- ........ -->
 
-                <input type="reset" value="Reset" data-theme="b" />
-              
+                   <!-- This is my range field -->
+
+            <div data-role="fieldcontain"><!-- Range -->
+
+                  <label for="importance">Importance</label>
+                  <input type="range" name="importance" id="importance" value="0" min="0" max="50" data-theme="a" />
+
+            </div><!-- Range -->
+
+                
+
+                  <!-- .... Completion Date .... -->
+
+            <div data-role="fieldcontain" ><!-- Date -->
+
+                  <label for="choreDate">Completion Date</label>
+                  <input type="date" id="choreDate" data-theme="a" />
+
+            </div><!-- Date -->
+
+                  <!-- ........ -->
+
+
+                  <!-- This is my text field --> 
+
+            <div data-role="fieldcontain" ><!-- Text -->
+
+                  <label for="notes" >Notes</label>
+                  <textarea data-theme="a" id="notes" placeholder="Any memo's about your chore goes here."></textarea>
+                  <p class="inputHints">Example: There is 2 loads that need to be washed.</p>
+
+            </div><!-- Text -->
+
+
+                  <!-- ........ -->
+
+            <div data-role="fieldcontain" ><!-- Save -->
+                  
+                    <input type="submit" id="saveButton" value="Save" data-theme="a" />
+                  
+                    
+                  
+                
+            </div><!-- Save -->
+                
+              <a href="#recorderrors" id="recorderrorslink" data-rel="dialog" >Open Errors</a>
+               
+              </form>
+        </div><!-- Content -->
+
+
+          <!-- ................................ -->
+
+      <div data-role="footer" data-position="fixed" ><!-- Footer -->
             
-            </div>
+        <div data-role="navbar" data-theme="a"><!-- Nav -->
+
+              <ul>
+                <li><a href="index.html" data-icon="home" >Home</a></li>
+
+                <li><a href="#github" data-icon="star"  >Info</a></li>
+
+                <li><a href="#about" data-icon="info" >About</a></li>
+
+              </ul>
+
+        </div><!-- Nav -->
+
+      </div><!-- Footer --> 
             
-            <!--input type="button" id="saveButton" /-->
-
-
-
-          </form>
-      </div>
-
-
-      <!-- ................................ -->
-
-      <div data-role="footer" data-position="fixed" >
-        <footer>  
-
-         <div data-role="navbar" data-theme="a">
-          <ul>
-            <li>
-              <a href="index.html" data-icon="home" >
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#github" data-icon="star"  >
-                Info
-              </a>
-            </li>
-            <li>
-              <a href="#about" data-icon="info" >
-                About
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div> 
-        </footer>
-      </div>
         
-    </div>
+            
+    </div><!-- Page -->
 
-    <div data-role="page" id="results" data-native-menu="false">
 
-      
 
-    </div>
+
+          <!-- ...................................................................... -->
+
+
+
+
+          <div data-role="dialog" id="recorderrors"><!-- Page -->
+
+            <div data-role="header" data-position="fixed"><!-- header -->
+
+              <h1>Missing Fields</h1>
+
+            </div><!-- header -->
+
+            <div data-role="content"><!-- content -->
+              
+              <ul>
+                <li>Test</li>
+              </ul>
+            
+            </div><!-- content -->
+
+
+          </div><!-- Page -->
       
     
     
     
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
     
+    <script src="js/libs/jquery.mobile-1.3.1.min.js"></script>
+    <script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
     
     <script src="js/json.js" type="text/javascript">
     </script>

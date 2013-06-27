@@ -10,7 +10,7 @@ $('#home').on('pageinit', function(){
     // My array for dropdown menu.
     var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "bedroom", "yard"],
         difficultyValue,
-        errMsg = $("#errors");;
+        errMsg = $("errors");;
     
  
     // Search
@@ -243,22 +243,39 @@ $('#home').on('pageinit', function(){
     searchButton5.on("click", buttonSearch5);
     searchButton6.on("click", buttonSearch6);
 
+
 });	
 
 /* ...........Add Item Page........... */
 		
 $('#addItem').on('pageinit', function(){
-/*
-		var myForm = $('#formId');
+
+
+
+		var myForm = $('#choreForm'),
+            recordErrors = $("#recorderrorslink");
+
 		    myForm.validate({
 			invalidHandler: function(form, validator) {
+                recordErrors.click();
+                console.log(validator);
+                
+                var html = "";
+                for (var key in validator.submitted) {
+                    var label = $('label [for^="'+ key +'"]');
+                    var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+                    var fieldName = legend.length ? legend.text() : label.text();
+                    html += "<li>"+ fieldName +"</li>";
+                }
+                $("#recorderrors ul").html(html);
+
 			},
 			submitHandler: function() {
 		var data = myForm.serializeArray();
 			storeData(data);
 		}
 	});
-*/	
+	
 	//any other code needed for addItem page goes here
 
 	// Get radio answer function.         
@@ -277,15 +294,16 @@ $('#addItem').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
+
 var autofillData = function (){
-	 for (var n in json) {
+     for (var n in json) {
             var id = Math.floor(Math.random() * 1000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
 };
 
 var getData = function(){
-	if (localStorage.length === 0) {
+    if (localStorage.length === 0) {
             alert("There is nothing to display so default data was added.");
             autoFillData();
         } else {
@@ -327,7 +345,7 @@ var getData = function(){
 };
 
 var storeData = function(data){
-	if (!key) {
+    if (!key) {
             var id = Math.floor(Math.random() * 1000001);
         } else {
             id = key;
@@ -345,26 +363,24 @@ var storeData = function(data){
     
 }; 
 
-var	deleteItem = function (){
-	var ask = confirm("Are you sure you want to delete this chore?");
+var deleteItem = function (){
+    var ask = confirm("Are you sure you want to delete this chore?");
         if (ask) {
             localStorage.removeItem(this.key);
             alert("Chore was deleted");
-            window.location.reload();
+            location.reload();
         } else {
             alert("Chore was NOT deleted.");
-        }		
+        }       
 };
-					
+                    
 var clearLocal = function(){
-	if (localStorage.length === 0) {
+    if (localStorage.length === 0) {
             alert("Storage is empty.");
         } else {
             localStorage.clear();
             alert("All chores have been deleted!");
-            window.location.reload();
+            location.reload();
             return false;
         }
 };
-
-
