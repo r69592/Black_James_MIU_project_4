@@ -218,29 +218,31 @@ $('#addItem').on('pageinit', function(){
 
 
 
-		var myForm = $('#choreForm'),
+        var myForm = $('#choreForm'),
             recordErrors = $("#recorderrorslink");
 
-		    myForm.validate({
-			invalidHandler: function(form, validator) {
+            myForm.validate({
+            invalidHandler: function(form, validator) {
                 recordErrors.click();
-                console.log(validator.submitted);
-
+                
+                
                 var html = "";
                 for (var key in validator.submitted) {
-                    var label = $('label [for^="'+ key +'"]');
-                    var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-                    var fieldName = legend.length ? legend.text() : label.text();
+                    var label = $('label[for^="'+ key + '"]').not('[generated]');
+                    console.log(label.text());
+                    //var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+                    var fieldName = label.length ? label.text() : label.text();
                     html += "<li>"+ fieldName +"</li>";
                 }
                 $("#recorderrors ul").html(html);
 
-			},
-			submitHandler: function() {
-		var data = myForm.serializeArray();
-			storeData(data);
-		}
-	});
+            },
+            submitHandler: function() {
+        var data = myForm.serializeArray();
+            storeData(data);
+            console.log(data);
+        }
+    });
 	
 	//any other code needed for addItem page goes here
 
@@ -254,31 +256,35 @@ $('#addItem').on('pageinit', function(){
             }
         }
     }
-
-
-  
-
+    var displayData = $("#displayData");
+    displayData.on("click", getData);
+    var clearStorage = $("#clearStorage");
+    clearStorage.on("click", clearLocal);
 	
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
+ // My get id function.
+    function ge(x) {
+        var elementId = document.getElementById(x);
+        return elementId;
+    }
 
 
-/*
     var autofillData = function (){
      for (var n in json) {
             var id = Math.floor(Math.random() * 1000001);
             localStorage.setItem(id, JSON.stringify(json[n]));
         }
 };
-*/
+
 var getData = function(){
     console.log(localStorage);
-    /*if (localStorage.length === 0) {
+    if (localStorage.length === 0) {
             alert("There is nothing to display so default data was added.");
-            autoFillData();
+            autofillData();
         } else {
-            var displayResults = $("#recorderrorslink");
+            var displayResults = $("#results");
 
             var makeDiv = document.createElement("div");
             makeDiv.setAttribute("id", "items");
@@ -312,7 +318,10 @@ var getData = function(){
                 }
                 makeItemLinks(localStorage.key(i), linksLi);
             }
-        }*/
+        }
+
+
+
 };
 
 var storeData = function(data, key){
@@ -323,17 +332,17 @@ var storeData = function(data, key){
         }
         //getSelectedRadio();
         var item = {};
-        item.chore = ["Chore :", $("#chore").value];
-        item.area = ["Chore Location :", $("#area").value];
+        item.chore = ["Chore :", $("#chore").val()];
+        item.area = ["Chore Location :", $("#area").val()];
         //item.difficulty = ["difficulty :", difficultyValue];
-        item.importance = ["importance :", $("#importance").value];
-        item.choreDate = ["Chore Date :", $("#choreDate").value];
-        item.notes = ["Notes :", $("#notes").value];
+        item.importance = ["importance :", $("#importance").val()];
+        item.choreDate = ["Chore Date :", $("#choreDate").val()];
+        item.notes = ["Notes :", $("#notes").val()];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Chore Saved!");
     
 }; 
-/*
+
 var deleteItem = function (){
     var ask = confirm("Are you sure you want to delete this chore?");
         if (ask) {
@@ -355,4 +364,3 @@ var clearLocal = function(){
             return false;
         }
 };
-*/
