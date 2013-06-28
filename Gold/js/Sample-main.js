@@ -1,4 +1,4 @@
-/*$('#home').on('pageinit', function(){
+$('#home').on('pageinit', function(){
 	//code needed for home page goes here
     // My get id function.
     function ge(x) {
@@ -25,7 +25,10 @@
 
             // Search by term
             if (myTypeArray[1]) {
+
+
                 var makeList = document.createElement("ul");
+                
                 document.getElementById("results").appendChild(makeList);
                 for (var i = 0, len = localStorage.length; i < len; i++) {
                     
@@ -47,6 +50,7 @@
                         }
                     }
                 }
+                
             }   
         
     };
@@ -211,7 +215,7 @@
 
 
 
-}); */
+}); 
 /* ...........Add Item Page........... */
 		
 $('#addItem').on('pageinit', function(){
@@ -224,18 +228,20 @@ $('#addItem').on('pageinit', function(){
             myForm.validate({
             invalidHandler: function(form, validator) {
                 recordErrors.click();
-                
+                console.log(validator.submitted);
                 
                 var html = "";
                 for (var key in validator.submitted) {
-                    var label = $('label[for^="'+ key + '"]').not('[generated]');
-                    console.log(label.text());
-                    //var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-                    var fieldName = label.length ? label.text() : label.text();
+                    var label = $('label[for^="'+ key +'"]').not('[generated]');
+                    
+                    var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+                    console.log(legend);
+                    var fieldName = legend.length ? legend.text() : label.text();
+                    console.log(fieldName);
                     html += "<li>"+ fieldName +"</li>";
                 }
                 $("#recorderrors ul").html(html);
-
+                console.log(html);
             },
             submitHandler: function() {
         var data = myForm.serializeArray();
@@ -284,11 +290,14 @@ var getData = function(){
             alert("There is nothing to display so default data was added.");
             autofillData();
         } else {
+
+            var recordErrors = $("#recorderrorslink");
+            recordErrors.click();
             var displayResults = $("#results");
 
             var makeDiv = document.createElement("div");
             makeDiv.setAttribute("id", "items");
-            makeDiv.appendChild(displayResults);
+            makeDiv.appendChild(recordErrors);
             var makeList = document.createElement("ul");
             makeDiv.appendChild(makeList);
             document.body.appendChild(makeDiv);
@@ -316,7 +325,7 @@ var getData = function(){
                     makeSubli.innerHTML = optSubText;
                     makeSublist.appendChild(linksLi);
                 }
-                makeItemLinks(localStorage.key(i), linksLi);
+                //makeItemLinks(localStorage.key(i), linksLi);
             }
         }
 
@@ -336,7 +345,7 @@ var storeData = function(data, key){
         item.area = ["Chore Location :", $("#area").val()];
         //item.difficulty = ["difficulty :", difficultyValue];
         item.importance = ["importance :", $("#importance").val()];
-        item.choreDate = ["Chore Date :", $("#choreDate").val()];
+        item.choreDate = ["Chore Date :", $("#cDate").val()];
         item.notes = ["Notes :", $("#notes").val()];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Chore Saved!");
